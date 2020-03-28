@@ -136,6 +136,7 @@ function RmanualLabor2() {
     var trapTrimpsOK = getPageSetting('RTrapTrimps');
     var hasTurkimp = game.talents.turkimp2.purchased || game.global.turkimpTimer > 0;
     var needToTrap = (game.resources.trimps.max - game.resources.trimps.owned >= game.resources.trimps.max * 0.05) || (game.resources.trimps.getCurrentSend() > game.resources.trimps.owned - game.resources.trimps.employed);
+    console.log(needToTrap)
     var fresh = false;
     //ULTRA FRESH
     if (!game.upgrades.Battle.done) {
