@@ -231,9 +231,9 @@ function RmanualLabor2() {
             safeBuyBuilding('Trap');
             setGather('buildings');
         }
-    else if (game.buildings.Trap.owned > 0)
-             setGather('trimps');
-    }
+    // else if (game.buildings.Trap.owned > 0)
+    //          setGather('trimps');
+    // }
     else {
         var manualResourceList = {
             'food': 'Farmer',
