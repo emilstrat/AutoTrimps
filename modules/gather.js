@@ -151,6 +151,7 @@ function RmanualLabor2() {
 	    safeBuyBuilding('Trap');
 	}
 	if (game.buildings.Trap.owned > 0 && game.resources.trimps.owned < 1) {
+        debug("(game.buildings.Trap.owned > 0 && game.resources.trimps.owned < 1) = " + (game.buildings.Trap.owned > 0 && game.resources.trimps.owned < 1))
 	    setGather('trimps');
 	}
 	if (game.resources.trimps.owned >= 1) {
@@ -211,7 +212,8 @@ function RmanualLabor2() {
              setGather('buildings');
     }
     else if (trapTrimpsOK && needToTrap && game.buildings.Trap.owned > 0) {
-             setGather('trimps');
+            debug("(trapTrimpsOK && needToTrap && game.buildings.Trap.owned > 0) = " + (trapTrimpsOK && needToTrap && game.buildings.Trap.owned > 0))
+            setGather('trimps');
     }
     else if (!bwRewardUnlocked("Foremany") && (game.global.buildingsQueue.length ? (game.global.buildingsQueue.length > 1 || game.global.autoCraftModifier == 0 || (getPlayerModifier() > 100 && game.global.buildingsQueue[0] != 'Trap.1')) : false)) {
              setGather('buildings');

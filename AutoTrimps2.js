@@ -45,7 +45,6 @@ setTimeout(delayStart, startupDelay);
 
 function delayStart() {
     initializeAutoTrimps();
-    printChangelog();
     setTimeout(delayStartAgain, startupDelay);
 }
 
