@@ -8,6 +8,7 @@ MODULES["gather"].minScienceSeconds = 60;
 //OLD: "Auto Gather/Build"
 function manualLabor2() {
     if (getPageSetting('ManualGather2')==0) return;
+    debug("ManualLabor2");
     //vars
     var breedingTrimps = game.resources.trimps.owned - game.resources.trimps.employed;
     var lowOnTraps = game.buildings.Trap.owned < 5;
