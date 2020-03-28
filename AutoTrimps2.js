@@ -12,6 +12,7 @@ function initializeAutoTrimps() {
         ATscriptLoad(modulepath, ATmoduleList[m]);
     }
     debug('AutoTrimps - emilstrat Fork Loaded!', '*spinner3');
+    console.log("Initialize");
 }
 
 var changelogList = [];
