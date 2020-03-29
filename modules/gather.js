@@ -231,14 +231,14 @@ function RmanualLabor2() {
                  setGather('science');
         }
     }
-    else if (trapTrimpsOK){
-        if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
-            safeBuyBuilding('Trap');
-            setGather('buildings');
-        }
-        // else if (game.buildings.Trap.owned > 0)
-        //         setGather('trimps');
-    }
+    // else if (trapTrimpsOK){
+    //     if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
+    //         safeBuyBuilding('Trap');
+    //         setGather('buildings');
+    //     }
+    //     // else if (game.buildings.Trap.owned > 0)
+    //     //         setGather('trimps');
+    // }
     else {
         var manualResourceList = {
             'food': 'Farmer',
