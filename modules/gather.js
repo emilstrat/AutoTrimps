@@ -230,7 +230,7 @@ function RmanualLabor2() {
                  setGather('science');
         }
     }
-    else if (trapTrimpsOK){
+    else if (trapTrimpsOK && notFullPop){
         if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
             safeBuyBuilding('Trap');
             setGather('buildings');
