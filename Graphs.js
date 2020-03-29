@@ -268,13 +268,13 @@ function setGraphData(graph) {
         case 'Clear Time':
             graphData = allPurposeGraph('cleartime1', true, null,
                 function specialCalc(e1, e2) {
-                    return Math.round(((e1.currentTime - e2.currentTime) - (e1.portalTime - e2.portalTime)) / 1000);
+                    return Math.round(((e1.currentTime - e2.currentTime) - (e1.portalTime - e2.portalTime)));
                 });
             title = 'Time to clear zone';
             xTitle = 'Zone';
             yTitle = 'Clear Time';
-            yType = 'Linear';
-            valueSuffix = ' Seconds';
+            yType = 'datetime';
+            // valueSuffix = ' Seconds';
             yminFloor = 0;
             break;
         case 'Cumulative Clear Time #2':
