@@ -8,8 +8,6 @@ MODULES["gather"].minScienceSeconds = 60;
 //OLD: "Auto Gather/Build"
 function manualLabor2() {
     if (getPageSetting('ManualGather2')==0) return;
-    debug("ManualLabor2", '*spinner3');
-    console.log("ManualLabor2");
     //vars
     var breedingTrimps = game.resources.trimps.owned - game.resources.trimps.employed;
     var lowOnTraps = game.buildings.Trap.owned < 5;
@@ -61,15 +59,15 @@ function manualLabor2() {
             setGather('science');
         }
     }
-    // else if (trapTrimpsOK){
-    //     //combined to optimize code.
-    //     if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
-    //         safeBuyBuilding('Trap');
-    //         setGather('buildings');
-    //     }
-    //     // else if (game.buildings.Trap.owned > 0)
-    //     //     setGather('trimps');
-    // }
+    else if (trapTrimpsOK){
+        //combined to optimize code.
+        if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
+            safeBuyBuilding('Trap');
+            setGather('buildings');
+        }
+        else if (game.buildings.Trap.owned > 0)
+            setGather('trimps');
+    }
     else {
         var manualResourceList = {
             'food': 'Farmer',
@@ -232,14 +230,14 @@ function RmanualLabor2() {
                  setGather('science');
         }
     }
-    // else if (trapTrimpsOK){
-    //     if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
-    //         safeBuyBuilding('Trap');
-    //         setGather('buildings');
-    //     }
-    //     // else if (game.buildings.Trap.owned > 0)
-    //     //         setGather('trimps');
-    // }
+    else if (trapTrimpsOK){
+        if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
+            safeBuyBuilding('Trap');
+            setGather('buildings');
+        }
+        else if (game.buildings.Trap.owned > 0)
+                setGather('trimps');
+    }
     else {
         var manualResourceList = {
             'food': 'Farmer',
