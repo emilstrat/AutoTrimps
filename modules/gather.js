@@ -33,7 +33,6 @@ function manualLabor2() {
             setGather('buildings');
     }
     else if (trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0) {
-        debug("(trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0) = " + (trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0), '*spinner3');
         setGather('trimps');
         if (trapperTrapUntilFull && (game.global.buildingsQueue.length == 0 || game.buildings.Trap.owned == 1) && !game.global.trapBuildAllowed  && canAffordBuilding('Trap'))
             safeBuyBuilding('Trap'); //get ahead on trap building since it is always needed for Trapper
@@ -61,7 +60,7 @@ function manualLabor2() {
     }
     else if (trapTrimpsOK){
         //combined to optimize code.
-        if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
+        if ((game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) || !notFullPop) {
             safeBuyBuilding('Trap');
             setGather('buildings');
         }
