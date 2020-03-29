@@ -142,10 +142,7 @@ function checkWorldSequentiality(){for(var a,b,c,d=1;d<dataBase.length-1;d++){if
 function drawGraph(a,b){
     var c=document.getElementById('graphSelection');
     a?(c.selectedIndex-- , 0 > c.selectedIndex&&(c.selectedIndex=0)):b&&c.selectedIndex!=c.options.length-1&&c.selectedIndex++,setGraphData(c.value)}
-function drawGraph(){
-    var c=document.getElementById('graphSelection');
-    setGraphData(c.value)
-}
+
 
 function setGraphData(graph) {
     var title, xTitle, yTitle, yType, valueSuffix, series, formatter, xminFloor = 1,
@@ -274,13 +271,20 @@ function setGraphData(graph) {
         case 'Clear Time':
             graphData = allPurposeGraph('cleartime1', true, null,
                 function specialCalc(e1, e2) {
-                    return Math.round(((e1.currentTime - e2.currentTime) - (e1.portalTime - e2.portalTime)));
+                    return Math.round((e1.currentTime - e2.currentTime) - (e1.portalTime - e2.portalTime));
                 });
             title = 'Time to clear zone';
             xTitle = 'Zone';
             yTitle = 'Clear Time';
             yType = 'datetime';
             // valueSuffix = ' Seconds';
+            formatter = function() {
+                var ser = this.series;
+                return '<span style="color:' + ser.color + '" >●</span> ' +
+                    ser.name + ': <b>' +
+                    Highcharts.dateFormat('%H:%M:%S', this.y) + '</b><br>';
+
+            };
             yminFloor = 0;
             break;
         case 'Cumulative Clear Time #2':
