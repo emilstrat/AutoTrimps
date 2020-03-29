@@ -8,7 +8,7 @@ MODULES["gather"].minScienceSeconds = 60;
 //OLD: "Auto Gather/Build"
 function manualLabor2() {
     if (getPageSetting('ManualGather2')==0) return;
-    debug("ManualLabor2");
+    debug("ManualLabor2", '*spinner3');
     //vars
     var breedingTrimps = game.resources.trimps.owned - game.resources.trimps.employed;
     var lowOnTraps = game.buildings.Trap.owned < 5;
@@ -34,7 +34,7 @@ function manualLabor2() {
             setGather('buildings');
     }
     else if (trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0) {
-        debug("(trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0) = " + (trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0));
+        debug("(trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0) = " + (trapTrimpsOK && (breedingTrimps < 5 || trapperTrapUntilFull) && game.buildings.Trap.owned > 0), '*spinner3');
         setGather('trimps');
         if (trapperTrapUntilFull && (game.global.buildingsQueue.length == 0 || game.buildings.Trap.owned == 1) && !game.global.trapBuildAllowed  && canAffordBuilding('Trap'))
             safeBuyBuilding('Trap'); //get ahead on trap building since it is always needed for Trapper
