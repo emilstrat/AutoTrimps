@@ -12,8 +12,10 @@ function betterAutoFight() {
     var newSquadRdy = game.resources.trimps.realMax() <= game.resources.trimps.owned + 1;
     var lowLevelFight = game.resources.trimps.maxSoldiers < breeding * 0.5 && breeding > game.resources.trimps.realMax() * 0.1 && game.global.world < 5;
     //Life Challenge
+    var livingStacks =  document.getElementById("livingStacks").textContent;
     if (game.global.challengeActive == "Life"
-        && getPageSetting('LifeMinUnliving') > document.getElementById("livingStacks").textContent
+        && livingStacks
+        && getPageSetting('LifeMinUnliving') > livingStacks
         && document.getElementsByClassName("cellColorCurrent")[0].classList.contains("Living")
         && game.global.currentMapId == ""){
             if (game.global.soldierHealth > 0){
