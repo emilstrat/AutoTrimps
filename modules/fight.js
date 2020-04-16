@@ -11,6 +11,21 @@ function betterAutoFight() {
     var breeding = (game.resources.trimps.owned - game.resources.trimps.employed);
     var newSquadRdy = game.resources.trimps.realMax() <= game.resources.trimps.owned + 1;
     var lowLevelFight = game.resources.trimps.maxSoldiers < breeding * 0.5 && breeding > game.resources.trimps.realMax() * 0.1 && game.global.world < 5;
+    //Life Challenge
+    if (game.global.challengeActive == "Life"
+        && getPageSetting('LifeMinUnliving') > document.getElementById("livingStacks").textContent
+        && game.global.world == 1
+        && document.getElementsByClassName("cellColorCurrent")[0].classList.contains("Living")
+        && game.global.currentMapId == ""){
+            if (game.global.soldierHealth > 0){
+                mapsClicked();
+                mapsClicked();
+                return;
+            }
+            else
+                return;
+        }
+
     if (!game.global.fighting) {
         if (newSquadRdy || game.global.soldierHealth > 0 || lowLevelFight || game.global.challengeActive == 'Watch') {
             fightManual();

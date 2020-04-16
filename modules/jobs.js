@@ -88,13 +88,6 @@ function buyJobs() {
         scientistRatio = totalRatio / MODULES["jobs"].scientistRatio3;
     }
 
-    if (getPageSetting('BuyGeneticist') && game.portal.Anticipation.level > 0 ){
-        if (srLastBreedTime.split("/")[1].split(" ")[1] < 30)
-            safeBuyJob('Geneticist', 1);
-        else if (srLastBreedTime.split("/")[1].split(" ")[1] > 35)
-            safeBuyJob('Geneticist', 1);
-    }
-
     if (game.global.world == 1 && game.global.totalHeliumEarned <= 5000) {
         if (game.resources.trimps.owned < game.resources.trimps.realMax() * 0.9) {
             if (game.resources.food.owned > 5 && freeWorkers > 0) {
