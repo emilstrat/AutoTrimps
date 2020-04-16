@@ -14,7 +14,6 @@ function betterAutoFight() {
     //Life Challenge
     if (game.global.challengeActive == "Life"
         && getPageSetting('LifeMinUnliving') > document.getElementById("livingStacks").textContent
-        && game.global.world == 1
         && document.getElementsByClassName("cellColorCurrent")[0].classList.contains("Living")
         && game.global.currentMapId == ""){
             if (game.global.soldierHealth > 0){
