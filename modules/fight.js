@@ -12,7 +12,7 @@ function betterAutoFight() {
     var newSquadRdy = game.resources.trimps.realMax() <= game.resources.trimps.owned + 1;
     var lowLevelFight = game.resources.trimps.maxSoldiers < breeding * 0.5 && breeding > game.resources.trimps.realMax() * 0.1 && game.global.world < 5;
     //Life Challenge
-    var livingStacks =  document.getElementById("livingStacks");
+    var livingStacks =  document.getElementById("livingStacks"); // Test
     if (game.global.challengeActive == "Life"
         && livingStacks
         && getPageSetting('LifeMinUnliving') > livingStacks.textContent
