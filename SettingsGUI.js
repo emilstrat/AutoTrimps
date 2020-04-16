@@ -683,7 +683,7 @@ function initializeAllSettings() {
     //Challenges
     
     //Life
-    createSetting('LifeMinUnliving', 'Minimum Unliving Stack: ', '', 'Value', '0', null, 'Challenges');
+    createSetting('LifeMinUnliving', 'Minimum Unliving Stack: ', '', 'value', '0', null, 'Challenges');
 
     //Arch
     createSetting('Rarchon', 'Archaeology', 'Turn on Archaeology settings. ', 'boolean', 'false', null, 'Challenges');
