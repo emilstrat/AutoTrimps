@@ -1738,6 +1738,9 @@ function updateCustomButtons() {
     
     //Challenges
     
+    //Life
+    !radonon ? turnOn("LifeMinUnliving") : turnOff("LifeMinUnliving");
+
     //Arch
     radonon ? turnOn("Rarchon") : turnOff("Rarchon");
     radonon && getPageSetting('Rarchon') == true ? turnOn("Rarchstring1") : turnOff("Rarchstring1");
